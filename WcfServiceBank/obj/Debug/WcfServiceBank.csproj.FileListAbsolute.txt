@@ -1,0 +1,16 @@
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\WcfServiceBank.dll.config
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\WcfServiceBank.dll
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\WcfServiceBank.pdb
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\EntityFramework.dll
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\EntityFramework.SqlServer.dll
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\EntityFramework.xml
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\bin\EntityFramework.SqlServer.xml
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.csproj.CoreCompileInputs.cache
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.csproj.CopyComplete
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.dll
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.pdb
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.Migrations.BankNew.resources
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.csproj.GenerateResource.cache
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.Migrations.BankNewUpdate.resources
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.Migrations.Helloworld.resources
+F:\HocWeb\EAD\BT Webservice\WcfServiceBank\WcfServiceBank\obj\Debug\WcfServiceBank.csproj.AssemblyReference.cache
