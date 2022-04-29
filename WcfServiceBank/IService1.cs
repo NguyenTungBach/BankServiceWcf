@@ -20,15 +20,15 @@ namespace WcfServiceBank
         [OperationContract]
         Account CreateAccount(Account account);
         [OperationContract]
+        Account FindAccount(int id);
+        [OperationContract]
         Account Login(string user , string password);
         [OperationContract]
-        Account FindByAccountNumber(string accountNumber); // 4.1 tìm tài khoản theo số tài khoản, truy vấn số dư
+        TransactionHistory Deposit(int AccountNumber, double Amount,string Token); // 1. thực hiện gửi tiền
         [OperationContract]
-        TransactionHistory Deposit(int AccountNumber, double Amount); // 1. thực hiện gửi tiền
+        TransactionHistory Withdraw(int AccountNumber, double Amount, string Token); // 2. thực hiện rút tiền
         [OperationContract]
-        TransactionHistory Withdraw(int AccountNumber, double Amount); // 2. thực hiện rút tiền
-        [OperationContract]
-        TransactionHistory Transfer(int SenderAccountNumber, int ReceiverAccountNumber, double Amount); // 3. thực hiện chuyển tiền
+        TransactionHistory Transfer(int SenderAccountNumber, int ReceiverAccountNumber, double Amount, string Token); // 3. thực hiện chuyển tiền
         [OperationContract]
         List<Account> ListAccount();
 

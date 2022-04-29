@@ -29,11 +29,6 @@ namespace WcfServiceBank
             return account;
         }
 
-        public Account FindByAccountNumber(string accountNumber)
-        {
-            throw new NotImplementedException();
-        }
-
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -63,18 +58,17 @@ namespace WcfServiceBank
             return account;
         }
 
-        //private void CheckLogin(string user, string password)
-        //{
-            
-        //}
-
-        public TransactionHistory Transfer(int SenderAccountNumber, int ReceiverAccountNumber, double Amount)
+        public TransactionHistory Transfer(int SenderAccountNumber, int ReceiverAccountNumber, double Amount, string Token)
         {
-            
             var accountSender = CheckValid(SenderAccountNumber);
             var accountReceiver = CheckValid(ReceiverAccountNumber);
             if (accountSender != null && accountReceiver != null && CheckBalance(accountSender, Amount))
             {
+                if (!CheckToken(accountSender, Token))
+                {
+                    return null;
+                }
+
                 using (DbContextTransaction transaction = db.Database.BeginTransaction())
                 {
                     try
@@ -129,12 +123,17 @@ namespace WcfServiceBank
         }
 
         // Rút tiền
-        public TransactionHistory Withdraw(int AccountNumber, double Amount)
+        public TransactionHistory Withdraw(int AccountNumber, double Amount, string Token)
         {
             var account = CheckValid(AccountNumber);
             
             if (account != null && CheckBalance(account, Amount))
             {
+                if (!CheckToken(account, Token))
+                {
+                    return null;
+                }
+
                 using (DbContextTransaction transaction = db.Database.BeginTransaction())
                 {
                     try
@@ -166,13 +165,27 @@ namespace WcfServiceBank
             return null;
         }
 
+        private bool CheckToken(Account account, string token)
+        {
+            if (account.Token.Equals(token))
+            {
+                return true;
+            }
+            return false;
+        }
+
         // Gửi tiền
-        public TransactionHistory Deposit(int AccountNumber, double Amount)
+        public TransactionHistory Deposit(int AccountNumber, double Amount, string Token)
         {
             var account = CheckValid(AccountNumber);
 
-            if (account != null )
+            if (account != null && CheckBalance(account, Amount))
             {
+                if (!CheckToken(account, Token))
+                {
+                    return null;
+                }
+
                 using (DbContextTransaction transaction = db.Database.BeginTransaction())
                 {
                     try
@@ -203,6 +216,11 @@ namespace WcfServiceBank
 
             }
             return null;
+        }
+
+        public Account FindAccount(int id)
+        {
+            return db.Accounts.Find(id);
         }
     }
 }
